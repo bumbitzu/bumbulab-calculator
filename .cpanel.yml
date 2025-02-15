@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/bumbulab/calculator/
+    - mkdir -p $DEPLOYPATH # Create the deployment path if it doesn't exist
+    - cp -r * $DEPLOYPATH # Copy all files to the deployment path
