@@ -16,8 +16,12 @@ app.post('/calculator/calculate', (req, res) => {
 
     execFile('./calculator', [num1, num2], (error, stdout, stderr) => {
         if (error) {
-            return res.status(500).json({ error: stderr });
+            // log to error to file
+            console.error(error);
+            return res.status(500).json({ error: stderr || error.message });
         }
+        // log to file
+        console.log(`Result: ${stdout.trim()}`);
         res.json({ result: stdout.trim() });
     });
 });
