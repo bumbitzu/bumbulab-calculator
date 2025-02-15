@@ -14,7 +14,8 @@ app.post('/calculator/calculate', (req, res) => {
         return res.status(400).json({ error: 'Provide num1 and num2' });
     }
 
-    execFile('./calculator', [num1, num2], (error, stdout, stderr) => {
+    const calculatorPath = path.join(__dirname, 'calculator');
+    execFile(calculatorPath, [num1, num2], (error, stdout, stderr) => {
         if (error) {
             // log to error to file
             console.error(error);
