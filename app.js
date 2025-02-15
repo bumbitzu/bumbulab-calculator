@@ -8,14 +8,10 @@ app.use(express.static(path.join(__dirname, '../public_html')));
 app.use(express.json());
 
 app.post('/calculator/calculate', (req, res) => {
-    const { num1, num2 } = req.body;
-
-    if (num1 === undefined || num2 === undefined) {
-        return res.status(400).json({ error: 'Provide num1 and num2' });
-    }
+    const { formula } = req.body;
 
     const calculatorPath = path.join(__dirname, 'calculator');
-    execFile(calculatorPath, [num1, num2], (error, stdout, stderr) => {
+    execFile(calculatorPath, [formula], (error, stdout, stderr) => {
         if (error) {
             // log to error to file
             console.error(error);
