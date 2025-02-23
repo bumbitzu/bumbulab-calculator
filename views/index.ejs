@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scientific Calculator | BumbuLab</title>
+    
+        <!-- SEO -->
+        <meta name="description" content="A scientific calculator that supports complex mathematical expressions, built with MathLive, MathJax, and Math.js.">
+        <meta name="keywords" content="calculator, scientific calculator, math, math expression, mathjs, mathlive, mathjax, advanced calculations">
+        <meta name="author" content="Adrian Bumbu">
+        <meta name="robots" content="index, follow">
+        <meta name="language" content="English">
+        <meta name="web_author" content="bumbulab.com">
+        
+        <!-- Open Graph Meta Tags (for better sharing on social media) -->
+        <meta property="og:title" content="Scientific Calculator | BumbuLab">
+        <meta property="og:description" content="A scientific calculator that supports complex mathematical expressions.">
+        <meta property="og:image" content="https://bumbulab.com/calculator/assets/calculator.png">
+        <meta property="og:url" content="https://bumbulab.com/calculator">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="BumbuLab">
+        <meta property="og:locale" content="en_US">
+    
+        <!-- Twitter Card for better visibility on Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Scientific Calculator | BumbuLab">
+        <meta name="twitter:description" content="A scientific calculator that supports complex mathematical expressions.">
+        <meta name="twitter:image" content="https://bumbulab.com/assets/calculator.png">
+        <meta name="twitter:site" content="@your_twitter_handle">
+    
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://bumbulab.com/calculator">
+    
+        <!-- Favicon -->
+        <link rel="icon" href="https://bumbulab.com/seo/calculator.png" type="image/x-icon">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+        <!-- Math Libraries -->
+        <script defer src="https://unpkg.com/mathlive"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+<body>
+    <div class="calculator" >
+        <div class="screen">
+            <div id="sub-screen" class="sub-screen" onclick="openKeyboard()">
+                <div class="main-input"><math-field class="math-field" id="main-input" virtual-keyboard-mode="manual"></math-field></div>
+                <div class="main-result" type="text" >
+                    
+                    <math-field class="math-field" id="main-result" read-only  onclick="openKeyboard()"></math-field>
+                    <div id="invalid-container" class="invalid-container">
+                        <img src="./assets/triangle-warning.svg" class="warning" alt="Warning">
+                        <p class="invalid">Invalid Expression</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button onclick="openKeyboard()" id="open-keyboard"><i class="fa-solid fa-keyboard control-b"></i></button>
+            <button id="enter" onclick="enter()"><i class="fa-solid fa-arrow-turn-up control-b"></i></button>
+            <button id="clear" onclick="clearScreen()"><i class="fa-solid fa-trash control-b"></i></button>
+            <button onclick="AC()" id="AC"><b>AC</b></i></button>
+            
+        </div>
+       
+    </div>
+    
+    <script src="./js/script.js"></script>
+    <script src="./js/VirtualKeyboard.js"></script>
+    <script src="./js/MathContent.js"></script>
+
+</html>
